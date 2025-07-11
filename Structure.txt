@@ -1,0 +1,42 @@
+cloud-code-editor/
+├── frontend/                  # React frontend with Monaco editor
+├── backend/                   # API server (Node.js or Python)
+├── .env                       # Root environment config
+├── docker-compose.yml         # For container orchestration (optional)
+└── README.md                  # Project setup & guide
+
+
+frontend/
+├── public/                    # Static assets, index.html
+├── src/
+│   ├── components/            # Reusable components (Navbar, Button, etc.)
+│   ├── pages/                 # Route-specific pages (Login, Dashboard, Editor)
+│   ├── editor/                # Monaco editor setup & logic
+│   ├── api/                   # Axios API functions (login, project, GitHub sync)
+│   ├── context/               # React context for Auth, Editor, etc.
+│   ├── hooks/                 # Custom React hooks
+│   ├── utils/                 # Helper functions (e.g., debounce, formatting)
+│   ├── styles/                # Global Tailwind styles or SCSS
+│   ├── App.jsx
+│   └── main.jsx               # Entry point
+├── .env                       # Frontend environment vars
+└── vite.config.js             # Vite config (or webpack.config.js)
+
+
+backend/
+├── src/
+│   ├── controllers/           # Handles request logic (auth, project, github)
+│   ├── routes/                # Express/FastAPI route definitions
+│   ├── models/                # DB schemas (User, Project)
+│   ├── services/
+│   │   ├── gitService.js      # Git clone, commit, push, pull logic
+│   │   ├── fileService.js     # Create/read/write code files
+│   │   └── githubService.js   # GitHub OAuth + API integration
+│   ├── middleware/            # Auth checks, error handling
+│   ├── utils/                 # JWT, encryption, formatting, etc.
+│   ├── config/                # DB, GitHub, or cloud storage config
+│   ├── app.js                 # Main server file (Express/FastAPI app)
+│   └── index.js               # Entry point
+├── Dockerfile                 # Backend container
+├── .env                       # Backend environment vars
+└── package.json               # Node.js deps (or requirements.txt for Python)
